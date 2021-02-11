@@ -1,7 +1,7 @@
  
         <!--<link rel="stylesheet" type="text/css" href="css/media.css">-->
         <!--<link rel="stylesheet" type="text/css" href="css/footer.css">-->
-        <!--<link rel="stylesheet" type="text/css" href="css/style.css">-->
+        <link rel="stylesheet" type="text/css" href="css/index.css">
 
         
         <!-- FONTAWESOME -->
@@ -17,4 +17,8 @@
         
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="js/panel.js"></script>
