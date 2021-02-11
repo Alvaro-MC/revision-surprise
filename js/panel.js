@@ -43,14 +43,13 @@ function removerVideo(id) {
 }
 
 function editarPanel(id) {
-    a = document.getElementById('new-stock')
-        //console.log("Panel : ", id)
+    a = document.getElementById('new-stock').value
     $.ajax({
         url: "modelo/panel.php",
         method: "POST",
         data: {
             id: id,
-            stock: a.value
+            stock: a
         },
         success: function(data) {
             location.reload()

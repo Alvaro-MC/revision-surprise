@@ -2,19 +2,9 @@
 
 require_once 'modelo/conexion.php';
 
-/*
-if(!isset($_SESSION['correo'])){
+if(!isset($_SESSION['usuario'])){
     header('Location: index.php');
 }
-*/
-/*
-$query = "  select max(id_video) as id_video from usuario u join video v on v.id_usuario = u.id_usuario where u.id_usuario = :id_usuario";
-$prepared = $pdo->prepare($query);
-$prepared->execute([
-    'id_usuario' => $_SESSION['id_usuario']
-]);
-$video = $prepared->fetch(PDO::FETCH_ASSOC);
-*/
 
 ?>
 <!DOCTYPE html>
@@ -34,8 +24,8 @@ $video = $prepared->fetch(PDO::FETCH_ASSOC);
 <body>
     <nav class="navbar navbar-expand-lg navbar-info bg-info">
         <div class="container-fluid">
-            <a><i class="fas fa-user size-icons-sign"></i></a>
-            <a><i class="fas fa-sign-in-alt size-icons-sign"></i></a>
+            <a><i class="fas fa-user size-icons-sign mx-3"></i><?php echo $_SESSION['usuario'] ?></a>
+            <a href="cerrar.php">Cerar Session<i class="fas fa-sign-in-alt size-icons-sign mx-3"></i></a>
         </div>
     </nav>
 

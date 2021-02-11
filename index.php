@@ -1,33 +1,30 @@
 <?php
 
-$user = null;
-$query = null;
-$url  = null;
-
 if (!empty($_POST)) {
-
-    echo "CNX";
 
     require_once 'modelo/conexion.php';
 
-    $query = "SELECT * FROM usuario WHERE correo = :correo";
+    $query = "SELECT * FROM usermc WHERE usuario = :usuario";
     $prepared = $pdo->prepare($query);
     $prepared->execute([
-        'correo' => $_POST['correo']
+        'usuario' => $_POST['usuario']
     ]);
     $user = $prepared->fetch(PDO::FETCH_ASSOC);
 
-    if (isset($user['correo'])) {
+    if (isset($user['usuario'])) {
 
-        if ($user['correo'] == $_POST['correo'] && password_verify($_POST['pass'], $user['contrasena'])) {
+        if ($user['usuario'] == $_POST['usuario'] && password_verify($_POST['pass'], $user['contrasena'])) {
             session_start();
             $_SESSION['id_usuario'] = $user['id_usuario'];
-            $_SESSION['usuario'] = $user['correo'];
+            $_SESSION['usuario'] = $user['usuario'];
             $_SESSION['nombre'] = $user['nombre'];
-            $_SESSION['correo'] = $user['correo'];
 
-            header("Location: panel.php");
+            header('Location: panel.php');
+        }else{
+            echo "No son iguales";
         }
+    }else{
+        "No esta definido";
     }
 }
 
@@ -59,17 +56,17 @@ if (!empty($_POST)) {
         <div class="row mt-2">
             <div class="col-12">
                 <div class="container">
-                    <form action="index.php" class="g-3 text-center mt-2 pt-4 pb-4">
+                    <form action="index.php" method="post" class="g-3 text-center mt-2 pt-4 pb-4">
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-5 mt-2">
-                                <label for="correo" class="form-label">Correo</label>
-                                <input type="text" placeholder="Escribe tu correo" class="form-control" id="correo" required>
+                                <label for="usuario" class="form-label">Usuario</label>
+                                <input type="text" placeholder="Escribe tu usuario" class="form-control" name="usuario" id="usuario" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mb-2">
                             <div class="col-12 col-md-5">
                                 <label for="pass" class="form-label">Contraseña</label>
-                                <input type="password" placeholder="Escribe tu contraseña" class="form-control" id="pass" required>
+                                <input type="password" placeholder="Escribe tu contraseña" class="form-control" name="pass" id="pass" required>
                             </div>
                         </div>
                         <div class="row justify-content-center mt-3">

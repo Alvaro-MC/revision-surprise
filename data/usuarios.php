@@ -30,6 +30,7 @@
     </tbody>
 </table>
 
+<!--
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-end">
         <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
@@ -39,3 +40,4 @@
         <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
     </ul>
 </nav>
+-->

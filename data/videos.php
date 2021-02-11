@@ -4,12 +4,13 @@
         <td>Ubicacion</td>
         <td>Fecha</td>
         <td>Mensaje</td>
+        <td>Nro Video</td>
         <td>Panel</td>
         <td>Estado</td>
         <td>Herramientas</td>
     </tr>
     <?php
-    $queryResult = $pdo->prepare("select * from video where estado='activo' order by id_video asc");
+    $queryResult = $pdo->prepare("select * from video where estado='activo' order by id_panel asc");
     $queryResult->execute([]);
     while ($video = $queryResult->fetch(PDO::FETCH_ASSOC)) {
     ?>
@@ -18,6 +19,7 @@
             <td><?php echo $video['ubicacion']; ?></td>
             <td><?php echo $video['fecha']; ?></td>
             <td><?php echo $video['mensaje']; ?></td>
+            <td><?php echo $video['nro_video']; ?></td>
             <td><?php echo $video['id_panel']; ?></td>
             <td><?php echo $video['estado']; ?></td>
             <td>
@@ -30,6 +32,7 @@
     ?>
 </table>
 
+<!--
 <nav aria-label="Page navigation example">
     <ul class="pagination justify-content-end">
         <li class="page-item"><a class="page-link" href="#">Anterior</a></li>
@@ -39,3 +42,4 @@
         <li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
     </ul>
 </nav>
+-->
