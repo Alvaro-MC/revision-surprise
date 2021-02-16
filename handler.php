@@ -22,13 +22,13 @@ switch (@parse_url($_SERVER['REQUEST_URI'])['path']) {
     case '/supervisor.php':
         require 'supervisor.php';
         break;
-    case 'modelo/panel.php':
+    case '/modelo/panel.php':
         require __DIR__ . '/modelo/panel.php';
         break;
-    case 'modelo/user.php':
+    case '/modelo/user.php':
         require __DIR__ . '/modelo/user.php';
         break;
-    case 'modelo/video.php':
+    case '/modelo/video.php':
         require __DIR__ . '/modelo/video.php';
         break;
 
