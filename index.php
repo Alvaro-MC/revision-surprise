@@ -19,7 +19,18 @@ if (!empty($_POST)) {
             $_SESSION['usuario'] = $user['usuario'];
             $_SESSION['nombre'] = $user['nombre'];
 
-            header('Location: panel.php');
+            switch($user['rol']){
+                case 'observador':
+                    header('Location: observador.php');
+                    break;
+                case 'editor':
+                    header('Location: editor.php');
+                    break;
+                case 'supervisor':
+                    header('Location: supervisor.php');
+                    break;
+            }
+            
         }else{
             echo "No son iguales";
         }

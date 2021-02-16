@@ -21,7 +21,6 @@
                 <td><?php echo $user['correo']; ?></td>
                 <td>
                     <button class="btn btn-danger" onclick="removeUser(<?php echo $user['id_usuario']; ?>)"><i class="fas fa-trash-alt"></i></button>
-                    <button class="btn btn-warning" disabled><i class="fas fa-edit"></i></button>
                 </td>
             </tr>
         <?php

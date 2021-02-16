@@ -24,7 +24,7 @@ if(!isset($_SESSION['usuario'])){
 <body>
     <nav class="navbar navbar-expand-lg navbar-info bg-info">
         <div class="container-fluid">
-            <a><i class="fas fa-user size-icons-sign mx-3"></i><?php echo $_SESSION['usuario'] ?></a>
+            <a><i class="fas fa-user size-icons-sign mx-3"></i><?php echo $_SESSION['usuario'] ?> - Supervisor</a>
             <a href="cerrar.php">Cerar Session<i class="fas fa-sign-in-alt size-icons-sign mx-3"></i></a>
         </div>
     </nav>
@@ -41,13 +41,13 @@ if(!isset($_SESSION['usuario'])){
             </nav>
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active mt-4" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                    <?php require_once 'data/usuarios.php'; ?>
+                    <?php require_once 'data/usuarios_s.php'; ?>
                 </div>
                 <div class="tab-pane fade mt-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                    <?php require_once 'data/videos.php'; ?>
+                    <?php require_once 'data/videos_s.php'; ?>
                 </div>
                 <div class="tab-pane fade mt-4" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                    <?php require_once 'data/paneles.php'; ?>
+                    <?php require_once 'data/paneles_s.php'; ?>
                 </div>
             </div>
 

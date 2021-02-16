@@ -2,11 +2,10 @@
     <tr class="table-primary">
         <td>ID</td>
         <td>Ubicacion</td>
-        <td>Fecha</td>
         <td>Mensaje</td>
         <td>Nro Video</td>
         <td>Panel</td>
-        <td>Estado</td>
+        <td>Publicacion</td>
         <td>Herramientas</td>
     </tr>
     <?php
@@ -17,14 +16,24 @@
         <tr>
             <td><?php echo $video['id_video']; ?></td>
             <td><?php echo $video['ubicacion']; ?></td>
-            <td><?php echo $video['fecha']; ?></td>
             <td><?php echo $video['mensaje']; ?></td>
             <td><?php echo $video['nro_video']; ?></td>
             <td><?php echo $video['id_panel']; ?></td>
-            <td><?php echo $video['estado']; ?></td>
+            <td>
+                <?php
+                    if($video['publicacion'] != 'Completado'){
+                ?>
+                        <button class="btn btn-warning" onclick="marcarVideo(<?php echo $video['id_video']; ?>)"><?php echo $video['publicacion']; ?></button>
+                <?php
+                    }else{
+                ?>
+                        <div class="alert alert-success" role="alert"><?php echo $video['publicacion']; ?></div>
+                <?php
+                    }
+                ?>
+            </td>
             <td>
                 <button class="btn btn-danger" onclick="removeVideo(<?php echo $video['id_video']; ?>)"><i class="fas fa-trash-alt"></i></button>
-                <button class="btn btn-warning" disabled><i class="fas fa-edit"></i></button>
             </td>
         </tr>
     <?php

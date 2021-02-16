@@ -1,4 +1,4 @@
-<!-- Button USUARIO -->
+<!-- Button Remover USUARIO -->
 <button id="rmUser" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalremoveuser" style="display:none"></button>
 <!-- Modal USUARIO -->
 <div class="modal fade" id="modalremoveuser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -23,7 +23,7 @@
 <!-- ****************************************************************************************************** -->
 
 
-<!-- Button VIDEO -->
+<!-- Button Remover VIDEO -->
 <button id="rmVideo" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalremovevideo" style="display:none"></button>
 <!-- Modal VIDEO -->
 <div class="modal fade" id="modalremovevideo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -48,7 +48,7 @@
 <!-- ****************************************************************************************************** -->
 
 
-<!-- Button PANEL -->
+<!-- Button Editar PANEL -->
 <button id="edPanel" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modaleditpanel" style="display:none"></button>
 <!-- Modal PANEL -->
 <div class="modal fade" id="modaleditpanel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -73,6 +73,30 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-success" onclick="editarPanel(document.getElementById('idPanel').text)">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ****************************************************************************************************** -->
+
+
+<!-- Button Marcar VIDEO -->
+<button id="mcVideo" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalmarcarvideo" style="display:none"></button>
+<!-- Modal VIDEO -->
+<div class="modal fade" id="modalmarcarvideo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar Video</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estas seguro que quieres marcar como completado el video Nro : <a id="idVideoMarcar"><strong></strong></a> ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-danger" onclick="completarVideo(document.getElementById('idVideoMarcar').text)">Marcar</button>
             </div>
         </div>
     </div>

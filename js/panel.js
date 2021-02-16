@@ -14,8 +14,12 @@ function editPanel(id) {
     document.getElementById('edPanel').click()
 }
 
+function marcarVideo(id) {
+    document.getElementById('idVideoMarcar').innerText = id
+    document.getElementById('mcVideo').click()
+}
+
 function removerUser(id) {
-    //console.log("Usuario : ", id)
     $.ajax({
         url: "modelo/user.php",
         method: "POST",
@@ -29,12 +33,12 @@ function removerUser(id) {
 }
 
 function removerVideo(id) {
-    //console.log("Video : ", id)
     $.ajax({
         url: "modelo/video.php",
         method: "POST",
         data: {
-            id: id
+            id: id,
+            action: 'remove'
         },
         success: function(data) {
             location.reload()
@@ -50,6 +54,20 @@ function editarPanel(id) {
         data: {
             id: id,
             stock: a
+        },
+        success: function(data) {
+            location.reload()
+        }
+    });
+}
+
+function completarVideo(id) {
+    $.ajax({
+        url: "modelo/video.php",
+        method: "POST",
+        data: {
+            id: id,
+            action: 'edit'
         },
         success: function(data) {
             location.reload()
