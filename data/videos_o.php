@@ -74,17 +74,21 @@
 <h4 class="text-center mt-3">Registros</h4>
 <table id="" class="table table-striped table-bordered">
     <tr class="table-primary">
+        <td>Fecha</td>
+        <td>Estado</td>
         <td>Nombre</td>
         <td>Apellido</td>
         <td>Mensaje</td>
         <td>Ubicacion</td>
     </tr>
     <?php
-    $queryResult = $pdo->prepare("select v.ubicacion as ubicacion, v.mensaje as mensaje, u.nombre as nombre, u.apellido as apellido from video v join usuario u on v.id_usuario = u.id_usuario where v.estado='activo' and u.estado='activo' and u.organizacion='externo'");
+    $queryResult = $pdo->prepare("select v.fecha_edicion as fecha, v.publicacion as publicacion, v.ubicacion as ubicacion, v.mensaje as mensaje, u.nombre as nombre, u.apellido as apellido from video v join usuario u on v.id_usuario = u.id_usuario where v.estado='activo' and u.estado='activo' and u.organizacion='externo' order by v.fecha_edicion DESC");
     $queryResult->execute([]);
     while ($video = $queryResult->fetch(PDO::FETCH_ASSOC)) {
     ?>
         <tr>
+            <td><?php echo $video['fecha']; ?></td>
+            <td><?php echo $video['publicacion']; ?></td>
             <td><?php echo $video['nombre']; ?></td>
             <td><?php echo $video['apellido']; ?></td>
             <td><?php echo $video['mensaje']; ?></td>

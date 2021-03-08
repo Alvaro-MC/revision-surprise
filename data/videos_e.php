@@ -9,7 +9,7 @@
         <td>Herramientas</td>
     </tr>
     <?php
-    $queryResult = $pdo->prepare("select * from video where estado='activo' order by id_panel asc");
+    $queryResult = $pdo->prepare("select * from video where estado='activo' order by publicacion desc");
     $queryResult->execute([]);
     while ($video = $queryResult->fetch(PDO::FETCH_ASSOC)) {
     ?>
