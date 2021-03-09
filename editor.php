@@ -38,7 +38,7 @@ if(!isset($_SESSION['usuario'])){
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade mt-4" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="tab-pane fade mt-4 active show" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <?php require_once 'data/videos_e.php'; ?>
                 </div>
             </div>

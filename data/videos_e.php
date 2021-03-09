@@ -1,11 +1,12 @@
 <table id="" class="table table-striped table-bordered">
     <tr class="table-primary">
         <td>ID</td>
+        <td>Fecha</td>
+        <td>Panel</td>
         <td>Ubicacion</td>
         <td>Mensaje</td>
-        <td>Nro Video</td>
-        <td>Panel</td>
-        <td>Publicacion</td>
+        <td>Plantilla</td>
+        <td>Estado</td>
         <td>Herramientas</td>
     </tr>
     <?php
@@ -15,10 +16,11 @@
     ?>
         <tr>
             <td><?php echo $video['id_video']; ?></td>
+            <td><?php echo $video['fecha_edicion']; ?></td>
+            <td><?php echo $video['id_panel']; ?></td>
             <td><?php echo $video['ubicacion']; ?></td>
             <td><?php echo $video['mensaje']; ?></td>
             <td><?php echo $video['nro_video']; ?></td>
-            <td><?php echo $video['id_panel']; ?></td>
             <td>
                 <?php
                     if($video['publicacion'] != 'Completado'){
